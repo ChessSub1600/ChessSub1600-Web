@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (password.value !== confirmPassword.value) {
       event.preventDefault();
       mensaje.textContent = '⚠️ Las contraseñas no coinciden. Por favor, revísalas.';
-      mensaje.style.color = '#e74c3c';
+      mensaje.style.color = '#bb200fff';
       mensaje.style.fontWeight = 'bold';
       mensaje.style.fontSize = '1rem';
       return;
