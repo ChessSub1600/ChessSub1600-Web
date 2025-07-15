@@ -6,18 +6,8 @@
   <title>Cursos Básicos - ChessSub1600</title>
   <!-- estilo del site cursos.html -->
   <link rel="stylesheet" href="assets/css/cursos.css">
+  <link rel="stylesheet" href="assets/css/tablero.css">
 
-  <!-- estilos del tablero -->
-
-  <!-- 1️⃣ CSS base del motor Chessground -->
-  <link rel="stylesheet" href="assets/css/chessground.min.css">
-  <!-- 2️⃣ Estilos estructurales personalizados -->
-  <link rel="stylesheet" href="chessground/assets/chessground.base.css">
-  <!-- 3️⃣ Temas visuales opcionales -->
-  <link rel="stylesheet" href="chessground/assets/chessground.brown.css">
-  <link rel="stylesheet" href="chessground/assets/chessground.cburnett.css">
-  <!-- 4️⃣ Tema personalizado tuyo -->
-  <link rel="stylesheet" href="chessground/src/board-theme.css">
 </head>
 
 <body>
@@ -131,30 +121,44 @@
         allowfullscreen></iframe>
     </div>
 
-    <div class="curso-card">
-      <h3>Ejemplo práctico en tablero interactivo</h3>
-      <p>Posición real para aplicar lo aprendido.</p>
+<!-- Todo lo que se actualizo: ✅ Movimiento interactivo con notación clara
+🔵 Marcado visual del destino con borde azul
+🔤 Iniciales de las piezas estilo estándar internacional
+📱 Adaptación responsiva para móviles
+🎯 Coordinación perfecta entre casillas y coordenadas -->
+    <!--Estructura HTML con coordenadas externas  -->
+ <section id="tablero-board">
+  <h3>♟️ Tablero Interactivo Sub1600</h3>
+  <p>Practica lo que aprendiste de nuestras guias en PDF.</p>
 
-      <div id="chessboard" style="width: 400px; height: 400px; margin: 0 auto;"></div>
-      <div id="ultimaJugada" style="text-align: center; margin: 10px;"></div>
-      <button id="resetBoard">🔄 Reiniciar tablero</button>
-      <div id="historialJugada" style="margin-top: 10px; padding: 10px; border: 1px solid #434343;"></div>
+  <div class="tablero-container">
+    <!-- Números verticales -->
+    <div class="coordenadas-verticales">
+      <span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span>
     </div>
 
-
-    <div class="curso-card">
-      <h3>Análisis de partida Sub1600</h3>
-      <p>Revisión de errores y toma de decisiones reales.</p>
-      <iframe class="video-ajedrez" src="https://www.youtube.com/embed/i_tuUYezfaE" frameborder="0"
-        allowfullscreen></iframe>
+    <!-- Tablero -->
+    <div class="tablero-envuelto">
+      <div id="tablero" class="custom-board"></div>
+      <!-- Letras horizontales -->
+      <div class="coordenadas-horizontales">
+        <span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span>
+      </div>
     </div>
+  </div>
 
-  </section>
+  <div id="ultima-jugada" class="info-jugada">Última jugada: —</div>
+  <button id="reiniciar-tablero" class="boton-reset">🔄 Reiniciar tablero</button>
+</section>
 
-  <!-- scripts del tablero -->
-  <script type="module" src="assets/js/chessground.min.js"></script>
-  <script type="module" src="assets/js/chess.js"></script>
-  <script type="module" src="assets/js/main.js"></script>
+
+
+
+
+
+
+  <!-- ✅ Motor lógico (modular) -->
+  <script type="module" src="assets/js/tablero.js"></script>
 
 
 </body>
