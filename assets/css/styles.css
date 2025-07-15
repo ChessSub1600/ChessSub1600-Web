@@ -354,7 +354,7 @@ footer {
   .title-logo {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
 
   .site-title {
@@ -419,7 +419,7 @@ footer {
   #formRegistro input,
   #formRegistro select {
     font-size: 1rem;
-    padding: 10px;
+    padding: 15px;
   }
 
   .cta-reserva {
