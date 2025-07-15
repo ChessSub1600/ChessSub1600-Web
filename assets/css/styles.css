@@ -98,7 +98,10 @@ nav {
   position: relative;
   background-color: rgba(242, 246, 255, 0.95);
   overflow: hidden;
-  padding: 40px;
+  padding: 50px 30px; /* ⬆️ Aumentamos espacio superior e inferior */
+  min-height: 400px;   /* ⬇️ Estira la altura mínima del bloque */
+  margin-bottom: 40px; /* 🧘 Separa mejor del siguiente contenido */
+  box-shadow: 0 0 10px rgba(0,0,0,0.08); /* 🎨 Sombra suave opcional */
 }
 
 .imagen-fondo-ajedrez {
@@ -167,11 +170,12 @@ section {
   max-width: 900px;
   color: white;
   padding: 30px;
-  margin: 30px auto;
-  border-radius: 8px;
+  margin: 40px auto;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+   background: #f9f9f9;
 }
 
 /* FONDO Y COLOR PARA SECCIONES CLAVE */
@@ -179,8 +183,11 @@ section {
 #about, 
 #courses,
 #contact{
-  background: linear-gradient(120deg, #001f3f, #003366);
-  color: #e8e8e8;
+  background-color: #f9f9f9;
+color: #1a1a1a;
+
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
 }
 /*estilos del formulario*/
 #formRegistro label {
@@ -342,7 +349,7 @@ footer {
 .cta-reserva .button {
   margin: 5px;
 }
-
+/*Secciones del movil */
 @media (max-width: 768px) {
   /* HEADER mejorado */
   header {
@@ -350,6 +357,13 @@ footer {
     align-items: center;
     padding: 20px;
   }
+  /*permite que el bloque no se vea tan apretado en pantallas pequenas*/
+  #historia-ajedrez {
+  padding: 50px 20px;
+  min-height: 500px;
+  margin-bottom: 30px;
+}
+
 
   .title-logo {
     flex-direction: column;
@@ -358,13 +372,13 @@ footer {
   }
 
   .site-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
   }
 
   .logo {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
   }
 
   /* MENÚ hamburguesa + enlaces */
@@ -374,66 +388,82 @@ footer {
   }
 
   .menu {
-    padding: 15px;
-    font-size: 1.1rem;
+    padding: 18px;
+    font-size: 1.15rem;
+    text-align: center;
   }
 
   .menu li {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .menu a {
-    padding: 8px;
+    padding: 10px;
     display: block;
     color: #0b0f2b;
+  }
+
+  /* SECCIONES generales */
+  section {
+    max-width: 90%;
+    padding: 28px 20px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
   }
 
   /* BOTONES generales */
   .button,
   .registro-link,
   .botonformu {
-    font-size: 1.05rem;
-    padding: 12px 16px;
+    font-size: 1.1rem;
+    padding: 14px 18px;
   }
 
   .button:hover,
   .registro-link:hover {
-    font-size: 1.1rem;
-  }
-
-  /* TEXTOS generales */
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-  }
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-size: 1.15rem;
   }
 
   /* FORMULARIO */
   #formRegistro input,
   #formRegistro select {
     font-size: 1rem;
-    padding: 15px;
+    padding: 14px;
   }
 
+  /* CTA RESERVA */
   .cta-reserva {
-    padding: 25px;
+    padding: 28px;
   }
 
   .cta-reserva h3 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    margin-bottom: 12px;
   }
 
   .cta-reserva p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
   }
 
+  /* CONTACTO */
   #contact a {
     font-size: 1rem;
   }
@@ -442,4 +472,5 @@ footer {
     font-size: 24px;
   }
 }
+
 
