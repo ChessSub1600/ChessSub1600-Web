@@ -27,3 +27,7 @@ build/
 
 # Subrepositorios innecesarios (como chessground si no lo usas como submódulo)
 chessground/
+# Backend: dependencias y credenciales
+/backend/node_modules/
+/backend/credentials.json
+/backend/token.json
