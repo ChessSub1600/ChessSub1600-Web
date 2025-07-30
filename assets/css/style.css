@@ -273,15 +273,95 @@ section {
 /* ===============================
    FOOTER
 =============================== */
-footer p {
-  background-color: #1d223e;
-  color: rgb(220, 255, 25);
-  font-weight: bold;
-  padding: 10px;
-  font-size: 1rem;
+.footer-contacto {
+  background-color: #1c1c2e;
+  color: #e1e1e1;
   text-align: center;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+  padding: 30px 20px;
+  border-top: 4px solid #00ffc3;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
 }
+
+.footer-contacto h3 {
+  font-size: 1.8rem;
+  color: #dcdcdc;
+  margin-bottom: 10px;
+}
+
+.footer-enlaces a {
+  color: #4ac4ff;
+  margin: 0 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+  color: #ffffff;
+}
+
+.frase-ajedrez {
+  font-style: italic;
+  color: #faf0b8;
+  margin: 10px 0;
+}
+
+.footer-creditos {
+  font-size: 0.9rem;
+  color: #d5d0d0;
+  margin-top: 15px;
+}
+.footer-contacto p{
+  color: white;
+}
+
+/*section resenas*/
+.reseñas {
+  background-color: #f2f2f9;
+  padding: 40px 20px;
+  border-top: 4px solid #0074e4;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.reseñas input,
+.reseñas textarea {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.reseñas button {
+  background-color: #0074e4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reseñas button:hover {
+  background-color: #005ac0;
+}
+
+#lista-reseñas {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
 /*mobil pantallas pequenas*/
 @media (max-width: 768px) {
   header {

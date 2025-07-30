@@ -91,18 +91,40 @@
             <h2>Contacto</h2>
             <p>¿Tienes dudas, sugerencias o quieres colaborar? ¡Escríbenos!</p>
             <a href="formulario.html" target="_blank" class="botonformu">Formulario de contacto</a>
-            <div>
-                <a href="https://www.instagram.com/chesssub1600" target="_blank"> 📸 Instagram
-                </a>
-                <a href="https://wa.me/34600000000" target="_blank">💬 WhatsApp </a>
-            </div>
+           
         </section>
 
     </main>
+    <!-- Nuevo footer con URL que redirija a una caja para dejar
+      resenas para mejorar la web (foro), tambien que contenga el link whatsapp y instagram
+      ademas de una frase importante de ajedrez  -->
+    <footer class="footer-contacto">
+  <h3>📫 Contacto</h3>
+  <p>¿Tienes sugerencias, ideas o deseas colaborar? 🧠 Escríbenos directamente o déjanos una reseña:</p>
+  <div class="footer-enlaces">
+    <a href="formulario.html" target="_blank">📝 Formulario de contacto</a> •
+    <a href="https://www.instagram.com/chesssub1600" target="_blank">📸 Instagram</a> •
+    <a href="https://wa.me/34641194252" target="_blank">💬 WhatsApp</a>
+  </div>
+  <p class="frase-ajedrez">“En el tablero, como en la vida: cada jugada cuenta.” ♟️</p>
+  <p class="footer-creditos">© 2025 ChessSub1600 • Proyecto educativo.</p>
+</footer>
+<!-- section resenas -->
 
-    <footer>
-        <p> 2025 ChessSub1600 • Proyecto educativo.</p>
-    </footer>
+<section class="reseñas" id="foro-reseñas">
+  <h2>🗨️ Reseñas de la comunidad</h2>
+  <p>Deja tu comentario sobre el sitio o los cursos. ¡Tu opinión nos ayuda a crecer!</p>
+
+  <form id="form-reseña">
+    <input type="text" name="nombre" placeholder="Tu nombre" required />
+    <textarea name="mensaje" placeholder="Escribe tu reseña aquí..." required></textarea>
+    <button type="submit">📤 Enviar reseña</button>
+  </form>
+
+  <div id="lista-reseñas">
+    <!-- Aquí aparecerán las reseñas -->
+  </div>
+</section>
 
     <script src="assets/js/menu.js"></script>
 </body>
