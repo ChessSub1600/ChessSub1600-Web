@@ -121,6 +121,27 @@ html, body {
 .casilla[draggable="true"]:active {
   cursor: grabbing;
 }
+/*estilos del boton de reinciar tablero*/
+.btn-reiniciar {
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  margin: 20px auto;
+  display: block;
+  background-color: #005ac0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-reiniciar:hover {
+  transform: scale(1.02);
+  background-color: #0074e4;
+  color: #000000;
+  border: 2px solid black;
+}
 
 
 /* 🖥️ Adaptaciones para pantallas grandes (modo escritorio) */
@@ -130,6 +151,11 @@ html, body {
     width: fit-content;      /* se ajusta al tamaño del tablero */
     margin: 30px auto;
     padding: 20px;
+  }
+  /*boton reiniciar talbero*/
+  .btn-reiniciar{
+    font-size: 1rem;
+     width: 90%;
   }
 
   #chessboard {
