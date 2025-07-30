@@ -161,7 +161,7 @@ section {
    HISTORIA
 =============================== */
 .historia p {
-  background-image: url('/assets/img/imgHistoriaAjedrez.jpg');
+  background-image: url('../img/imgHistoriaAjedrez.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
