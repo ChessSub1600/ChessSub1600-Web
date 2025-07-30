@@ -386,10 +386,9 @@ section {
 }
 
 .title-logo {
-  display: flex;
-  flex-direction: column;   /* ✅ Uno debajo del otro */
+  display: flex;   /* ✅ Uno debajo del otro */
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 0px;
 }
 
 .site-title {
@@ -407,11 +406,14 @@ section {
   align-self: center;       /* ✅ Centrado debajo del título */
   margin-top: 4px;
 }
-
+/*section main para tener todo el ancho de la pantalla del mobil*/
+.main-principal{
+  padding: .2rem;
+}
 
   section {
-    margin: 20px 12px;
-    padding: 20px;
+    margin: center;
+    padding: 1rem;
   }
 
   h1,
