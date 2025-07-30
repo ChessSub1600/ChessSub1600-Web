@@ -1,0 +1,197 @@
+/* 🌌 Fondo global */
+body {
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🧃 Contenedor principal del formulario */
+#formulario-registro {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #e5ecfc;
+  border: 2px solid #63b1e5;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  animation: fadeInForm 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ✨ Animación de entrada */
+@keyframes fadeInForm {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📌 Título y subtítulo */
+#formulario-registro h2 {
+  color: #16325c;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#formulario-registro > p {
+  font-size: 1rem;
+  text-align: center;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* ✍️ Etiquetas de campos */
+#formRegistro label {
+  font-weight: 600;
+  display: block;
+  margin: 20px 0 8px;
+  font-size: 1rem;
+  color: #16325c;
+}
+
+/* 📥 Campos de entrada y selectores */
+#formRegistro input,
+#formRegistro select {
+  width: 96%;
+  padding: 12px;
+  border: 1px solid #3498db;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#formRegistro input:focus,
+#formRegistro select:focus {
+  border-color: #2c3fef;
+  outline: none;
+  box-shadow: 0 0 5px rgba(44, 63, 239, 0.3);
+}
+
+/* 🧷 Botón enviar */
+.botonformu {
+  background-color: #0d1ca1;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 14px 20px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botonformu:hover {
+  background-color: #2c3fef;
+}
+
+/* ✅ Mensaje de confirmación */
+#mensaje {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 📸 Foto de perfil */
+.registro-foto {
+  display: block;
+  margin: 0 auto 25px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #16325c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.registro-foto:hover {
+  transform: scale(1.05);
+}
+
+/* 💬 Frase motivadora */
+.frase-capablanca {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* 📄 Bloque de consentimiento legal */
+.consentimiento {
+  display: flex;
+  flex-direction: column;
+  background-color: #eef5ff;
+  border: 1px solid #3498db;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.texto-terminos {
+  font-size: 0.95rem;
+  color: #16325c;
+  margin-bottom: 12px;
+}
+
+/* 📦 Casilla de verificación */
+.casilla {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.casilla input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #3498db;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  /* ✅ Eliminamos el borde por completo */
+  border: none;
+}
+
+/* 🔗 Enlaces a términos y política */
+.consentimiento a {
+  color: #2c3fef;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.consentimiento a:hover {
+  color: #63b1e5;
+}
+
+/* 📱 Adaptación para móviles */
+@media (max-width: 768px) {
+  #formulario-registro {
+    padding: 20px;
+    border-radius: 10px;
+    width: 95%;
+  }
+
+  #formulario-registro h2 {
+    font-size: 1.6rem;
+  }
+
+  .botonformu {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .registro-foto {
+    width: 100px;
+    height: 100px;
+  }
+
+  .frase-capablanca {
+    font-size: 0.85rem;
+  }
+}

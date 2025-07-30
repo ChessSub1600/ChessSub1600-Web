@@ -1,0 +1,20 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Editor VS Code
+.vscode/
+
+# Logs y temporales
+*.log
+*.tmp
+
+# Node.js y dependencias (si aplican)
+node_modules/
+
+# Archivos de entorno
+.env
+
+# Otros que uses en ChessSub1600-Web
+*.bak
+*.swp

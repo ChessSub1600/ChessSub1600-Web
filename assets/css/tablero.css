@@ -1,0 +1,174 @@
+/* 🌍 Reglas globales: aseguran que el layout sea consistente */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden; /* previene scroll horizontal inesperado */
+}
+
+
+/* 📦 Contenedor principal del tablero */
+.tablero-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 700px;     /* espacio cómodo en escritorio */
+  margin: 20px auto;
+  padding: 10px;
+  overflow: hidden;     /* evita scroll interno si hay desbordes */
+}
+
+
+/* 🧱 Tablero 8x8 casillas */
+#chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  border: 3px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;       /* centrado en el contenedor */
+}
+
+
+/* 📄 Información de la última jugada */
+.jugada-info {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+
+/* ♟️ Imagen de cada pieza */
+.pieza-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;     /* ajusta proporciones sin cortar */
+  pointer-events: none;    /* evita interferencias con el mouse */
+}
+
+
+/* 🎯 Casillas individuales */
+.casilla {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  user-select: none;
+  transition: transform 0.1s ease;
+}
+
+.casilla.blanca {
+  background-color: #eeeae5;
+}
+
+.casilla.negra {
+  background-color: #50a9ec;
+}
+
+.casilla.seleccionada {
+  outline: 3px solid #0066ff;
+  box-shadow: 0 0 8px 4px rgba(0, 38, 255, 0.6);
+  transform: scale(1.05); /* efecto visual al seleccionar */
+}
+
+
+/* 🧱 Fila como contenedor visual (no genera div extra) */
+.fila {
+  display: contents;
+}
+
+
+/* 🔢 Números al costado (eje vertical 8–1) */
+.tablero-container .numeros-izquierda {
+  position: absolute;
+  top: 50px;
+  left: 0px;               /* aleja los números hacia la izquierda */
+  display: grid;
+  grid-template-rows: repeat(8, 60px); /* misma altura que las casillas */
+  height: 480px;             /* 8 x 60px */
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+  z-index: 1;
+  align-items: center;       /* centra verticalmente cada número */
+  text-align: right;
+}
+
+
+
+
+/* 🔠 Letras debajo (eje horizontal 1–8) */
+.letras-abajo {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  margin: 10px auto 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  width: fit-content;
+}
+
+
+/* ✋ Cursor arrastrable para mover piezas */
+.casilla[draggable="true"] {
+  cursor: grab;
+}
+.casilla[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+
+/* 🖥️ Adaptaciones para pantallas grandes (modo escritorio) */
+@media (min-width: 501px) {
+  .tablero-container {
+    max-width: none;         /* quita límite fijo */
+    width: fit-content;      /* se ajusta al tamaño del tablero */
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  #chessboard {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .letras-abajo {
+    width: fit-content;
+    margin: 12px auto 0;
+  }
+
+  .numeros-izquierda {
+    left: -30px;             /* corrige posición para mejor alineación */
+    height: 480px;
+  }
+}
+
+
+/* 📱 Adaptaciones para pantallas pequeñas (modo móvil) */
+@media (max-width: 500px) {
+  #chessboard {
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(8, 40px);
+    width: fit-content;
+  }
+
+  .numeros-izquierda {
+    font-size: 0.75rem;
+    height: 320px;
+  }
+
+  .letras-abajo {
+    grid-template-columns: repeat(8, 40px);
+    font-size: 1rem;
+  }
+
+  .tablero-container {
+    padding: 5px;
+    overflow-x: hidden;     /* previene borde blanco lateral */
+  }
+}

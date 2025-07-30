@@ -1,0 +1,192 @@
+/*ESTILOS DEL BODY*/
+body {
+  background: linear-gradient(to right, #0b0f2b, #0097c9);
+
+}
+
+
+.curso-card h3,
+.curso-card p,
+.curso-card li,
+.pdf-card h3,
+.pdf-card p {
+  color: #333333; /* o el color que prefieras para contraste */
+}
+
+
+/* CENTRAR Y DISEÑAR LAS SECCIONES */
+section,
+.curso-card,
+.pdf-card,
+.section-descriptivaPDF {
+  text-align: center;
+  border: 2px solid #0077cc;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  max-width: 1000px;
+}
+
+/* TITULOS GENERALES */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #0077cc;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #208530;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: #d35400;
+}
+
+/* PÁRRAFOS GENERALES */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555555;
+}
+
+/* CURSO Y PDF CARDS MÁS VISUALES */
+.curso-card,
+.pdf-card {
+  border-left: 3px solid #0077cc;
+  border-right: 3px solid #0077cc;
+  box-shadow: 0 4px 10px rgba(0, 119, 204, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  background-color: #fdfdfd;
+}
+
+/* COLORES SEGÚN SECCIÓN */
+#clases-sub1600 h2,
+#clases-sub1600 p {
+  color: #003f91;
+}
+
+#curso-basico h2,
+#curso-basico p {
+  color: #6f1d1b;
+}
+
+.section-descriptivaPDF h2,
+.section-descriptivaPDF p {
+  color: #1b5e20;
+}
+
+#curso-intermedio h2,
+#curso-intermedio p {
+  color: #4a148c;
+}
+
+/* BOTONES CON EFECTO */
+.button {
+  font-size: 1rem;
+  background-color: #208530;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #186e28;
+  transform: scale(1.05);
+}
+
+/* VIDEOS EMBEBIDOS */
+.video-ajedrez {
+  width: 100%;
+  max-width: 700px;
+  height: 390px;
+  border-radius: 8px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: block;
+}
+.curso-card ul {
+  padding-left: 20px; /* acercamos los bullets al borde */
+  margin: 0 auto;
+  text-align: left;   /* alineamos el texto a la izquierda */
+  list-style-position: inside; /*Para asegurar que los puntos queden alineados*/
+}
+
+.curso-card li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  /* BODY AJUSTADO PARA MÓVIL */
+  body {
+    background: linear-gradient(to bottom, #0b0f2b, #0097c9);
+  }
+
+  /* SECCIONES */
+  section,
+  .curso-card,
+  .pdf-card,
+  .section-descriptivaPDF {
+    padding: 20px;
+    margin: 25px auto;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,119,204,0.2);
+  }
+
+  /* TEXTOS AJUSTADOS */
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  p,
+  .curso-card li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* VIDEOS EMBEBIDOS */
+  .video-ajedrez {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* LISTAS */
+  .curso-card ul {
+    padding-left: 10px;
+  }
+
+  /* BOTONES */
+  .button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  /* Aumentar espacio entre cards */
+  .curso-card,
+  .pdf-card {
+    margin-bottom: 30px;
+  }
+}

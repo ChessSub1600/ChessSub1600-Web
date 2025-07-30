@@ -1,0 +1,129 @@
+/* 🔳 Contenedor del menú desplegable */
+.menu {
+  position: absolute;                /* Posicionado respecto al contenedor */
+  top: 70px;                         /* Distancia desde arriba */
+  right: 20px;                       /* Separación del borde derecho */
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo semitransparente */
+  border-radius: 12px;              /* Bordes redondeados */
+  box-shadow:                       /* Sombra estilizada con color brillante */
+    0 0 15px rgba(0, 255, 195, 0.4),
+    0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;                    /* Espaciado interior */
+  z-index: 1000;                    /* Asegura estar sobre otros elementos */
+  width: 200px;                     /* Ancho fijo */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animaciones suaves */
+  opacity: 0;                       /* Oculto por defecto */
+  transform: translateY(-20px);    /* Empieza elevado para efecto deslizante */
+  overflow: hidden;                /* Oculta contenido desbordado */
+  display: none;                   /* Estado inicial oculto */
+}
+
+/* 🚀 Menú desplegado */
+.menu.active {
+  display: block;                   /* Se muestra */
+  opacity: 1;                       /* Totalmente visible */
+  transform: translateY(0);        /* Sin desplazamiento vertical */
+}
+
+
+/* 🧾 Estructura de la lista */
+.menu ul {
+  list-style: none;                /* Sin viñetas */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;                       /* Espaciado entre elementos */
+}
+
+/* 📌 Cada ítem del menú */
+.menu li {
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;                /* Alineación de texto a la izquierda */
+}
+
+/* 🔗 Enlaces de navegación */
+.menu a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #0b0f2b;
+  display: block;
+}
+
+/* ✨ Efecto al pasar el mouse o hacer clic */
+.menu li:hover,
+.menu li:active {
+  background-color: #e1fffb;
+  box-shadow: 
+    0 0 12px rgba(0, 255, 195, 0.4),
+    0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/*cursos pointer al modo escritorio*/
+  #hamburger,
+#closeMenu {
+  cursor: pointer;
+}
+/* ❎ Estilo universal de la “X” de cierre del menú */
+.close-menu {
+  font-size: 24px;
+  color: #0c0c0c;
+  padding: 10px;
+  cursor: pointer;
+  text-align: right;
+  display: block;
+  width: 90%;           /* Asegura que el botón ocupe toda la fila */
+}
+
+
+
+
+/* 📱 Teléfonos pequeños (≤480px) */
+@media (max-width: 480px) {
+  .menu {
+    right: 10px;
+    top: 60px;
+    width: 180px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Móviles medianos y grandes (≤768px) */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-y: auto;
+    font-size: 1rem;
+  }
+
+  .menu li {
+    text-align: center;
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+
+  .close-menu {
+    display: block;              /* Visible solo en móviles */
+  }
+}
+
+/* ⚙️ Estado de inicio del menú */
+#menu {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+/* 🚀 Mostrar menú cuando está activo */
+#menu.active {
+  display: block;
+}
+
