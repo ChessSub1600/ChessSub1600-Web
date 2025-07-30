@@ -171,27 +171,26 @@ body {
 
 /* 📱 Adaptación para móviles */
 @media (max-width: 768px) {
-  #formulario-registro {
-    padding: 20px;
-    border-radius: 10px;
-    width: 95%;
+  #formulario-registro input[type="text"],
+  #formulario-registro input[type="email"],
+  #formulario-registro input[type="password"],
+  #formulario-registro input[type="tel"],
+  #formulario-registro select {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 8px;
+    margin: 6px auto;
+    display: block;
+    border-radius: 8px;
+    box-sizing: border-box;
   }
 
-  #formulario-registro h2 {
-    font-size: 1.6rem;
-  }
-
-  .botonformu {
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  .registro-foto {
-    width: 100px;
-    height: 100px;
-  }
-
-  .frase-capablanca {
-    font-size: 0.85rem;
+  #formRegistro label {
+    display: block;
+    width: 90%;
+    margin: 6px auto 2px;
+    text-align: left;
+    font-size: 0.9rem;
   }
 }
+
