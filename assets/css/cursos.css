@@ -4,6 +4,24 @@ body {
 
 }
 
+/*IMG cursos.css principal*/
+.img-caballo-cursos {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 200px;
+  box-shadow: 10px 4px 12px rgba(0, 0, 0, 0.9);
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-caballo-cursos:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 4px 12px #03abff;
+  border: 1px solid #03abff;
+}
+
 
 .curso-card h3,
 .curso-card p,
@@ -12,6 +30,8 @@ body {
 .pdf-card p {
   color: #333333; /* o el color que prefieras para contraste */
 }
+
+
 
 
 /* CENTRAR Y DISEÑAR LAS SECCIONES */
