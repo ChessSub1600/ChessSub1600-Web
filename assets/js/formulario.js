@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 📌 URL del Web App de Google Apps Script (reemplaza con tu URL real)
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyC6WDuWRWp6_zJnqUUBzoIJKLxl1oqzcxEMuYZKlFW6vdcaxZoyh_ymw1KjdVWNjw/exec';
-
+//https://script.google.com/macros/s/AKfycbyC6WDuWRWp6_zJnqUUBzoIJKLxl1oqzcxEMuYZKlFW6vdcaxZoyh_ymw1KjdVWNjw/exec
   // 🧷 Escuchar el evento de envío del formulario
   formulario.addEventListener('submit', function (event) {
     event.preventDefault(); // Evita el envío tradicional
