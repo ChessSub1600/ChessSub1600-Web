@@ -32,6 +32,7 @@ async function guardarRegistroEnSheets(datos) {
 
     await sheets.spreadsheets.values.append({
         spreadsheetId: '14duvYmnsoARzgk-OdzRd_4IUQp2UX5JKL51tbVqHFjQ',
+        //mismo spreadsheets AKfycbyC6WDuWRWp6_zJnqUUBzoIJKLxl1oqzcxEMuYZKlFW6vdcaxZoyh_ymw1KjdVWNjw
         range: 'Hoja1',
         valueInputOption: 'USER_ENTERED',
         resource: { values: valores }
