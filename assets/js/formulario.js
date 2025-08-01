@@ -42,11 +42,12 @@ const datos = {
   apellido: document.getElementById('apellido').value.trim(),
   email: document.getElementById('email').value.trim(),
   password,
+  confirmPassword,
   telefono: document.getElementById('telefono').value.trim(),
   interes: document.getElementById('interes').value,
 };
 
-fetch('https://chesssub1600-web.onrender.com/formulario', {
+fetch('http://localhost:3000/formulario', { //esta es la url de donde se encuentra el servidor
   method: 'POST',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
