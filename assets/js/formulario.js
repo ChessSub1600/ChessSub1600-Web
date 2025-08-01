@@ -36,6 +36,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Aquí puedes agregar tu lógica de envío, por ejemplo:
     // fetch('/ruta-backend', { method: 'POST', body: JSON.stringify({ ... }) })
+    // ✅ Enviar datos al backend
+const datos = {
+  nombre: document.getElementById('nombre').value.trim(),
+  apellido: document.getElementById('apellido').value.trim(),
+  email: document.getElementById('email').value.trim(),
+  password,
+  telefono: document.getElementById('telefono').value.trim(),
+  interes: document.getElementById('interes').value,
+};
+
+fetch('https://chesssub1600-web.onrender.com/formulario', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  body: new URLSearchParams(datos)
+})
+  .then(response => response.text())
+  .then(data => {
+    mostrarMensaje(data, false);
+  })
+  .catch(error => {
+    mostrarMensaje('Error al enviar el formulario. Intenta más tarde.', true);
+    console.error(error);
+  });
+
   });
 
   function mostrarMensaje(texto, esError) {
