@@ -11,6 +11,9 @@ html {
   color: #1e1e1e;
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
 }
+.container-btn1{
+  margin: 6%;
+}
 
 /* ===============================
    TIPOGRAFÍA GLOBAL
@@ -83,29 +86,6 @@ p {
   transform: translateY(-100%);
 }
 
-
-/*overlay para mobiles */
-#menu a {
-  color: #6718f9;
-  /* texto blanco por defecto */
-  border: 1px solid grey;
-  width: 100%;
-  box-shadow: 2px 2px 5px rgba(10, 20, 100, 0.5);
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-#menu a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  /* fondo suave al pasar el mouse */
-  color: #00ffc3;
-  /* efecto llamativo en hover */
-  width: 100%;
-}
-
-
 /*header transparente*/
 .header-transparente {
   background-color: rgba(11, 15, 43, 0.6);
@@ -114,14 +94,11 @@ p {
   backdrop-filter: blur(6px);
   /* efecto de desenfoque elegante */
 }
-
-
 .title-logo {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .logo {
   width: 60px;
   height: 60px;
@@ -137,26 +114,8 @@ p {
   box-shadow: 0 0 15px #00ffc3, 0 0 5px #fff;
 }
 
-/* ===============================
-   MENÚ hamburguesa
-=============================== */
-.hamburger {
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-  padding: 10px;
-}
-
-/*hover para alumbrado de la hamburguesa*/
-.hamburger:hover {
-  color: #00ffc3;
-  transform: scale(1.1);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-/* ===============================
-   SECCIONES PRINCIPALES
-=============================== */
+  
+/*secciones principales*/
 section {
   max-width: 900px;
   margin: 40px auto;
@@ -369,11 +328,6 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
-
-
-
-
-
 /*mobil pantallas pequenas*/
 @media (max-width: 768px) {
   .header {
@@ -390,18 +344,15 @@ section {
   align-items: center;
   margin-bottom: 0px;
 }
-
 .site-title {
   font-size: 1.4rem;
   text-align: center;
   margin: 0;                /* ✅ Elimina espacio vertical extra */
 }
-
 .logo {
   width: 48px;
   height: 48px;
 }
-
 .hamburger {
   align-self: center;       /* ✅ Centrado debajo del título */
   margin-top: 4px;
@@ -410,27 +361,22 @@ section {
 .main-principal{
   padding: .2rem;
 }
-
   section {
     margin: center;
     padding: 1rem;
   }
-
   h1,
   h2,
   h3 {
     font-size: 1.6rem;
     text-align: center;
   }
-
   p {
     font-size: 1rem;
   }
-
   .img-curso {
     width: 160px;
   }
-
   .botonformu,
   .registro-link {
     width: 100%;
@@ -439,15 +385,12 @@ section {
     padding: 10px;
     margin: 10px 0;
   }
-
   #contact {
     text-align: center;
   }
-
   #contact img {
     height: 20px;
   }
-
   footer p {
     font-size: 0.9rem;
     padding: 8px;

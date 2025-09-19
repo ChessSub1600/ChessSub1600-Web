@@ -1,136 +1,152 @@
-/* 🔳 Contenedor del menú desplegable */
+/* 🌐 Menú desplegable rediseñado */
 .menu {
-  position: absolute;                /* Posicionado respecto al contenedor */
-  top: 70px;                         /* Distancia desde arriba */
-  right: 20px;                       /* Separación del borde derecho */
-  background-color: rgba(255, 255, 255, 0.95); /* Fondo semitransparente */
-  border-radius: 12px;              /* Bordes redondeados */
-  box-shadow:                       /* Sombra estilizada con color brillante */
-    0 0 15px rgba(0, 255, 195, 0.4),
-    0 0 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;                    /* Espaciado interior */
-  z-index: 1000;                    /* Asegura estar sobre otros elementos */
-  width: 200px;                     /* Ancho fijo */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Animaciones suaves */
-  opacity: 0;                       /* Oculto por defecto */
-  transform: translateY(-20px);    /* Empieza elevado para efecto deslizante */
-  overflow: hidden;                /* Oculta contenido desbordado */
-  display: none;                   /* Estado inicial oculto */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 20%; /* Deja 20% del margen izquierdo */
+  background-color: #fdfdfd; /* mismo fondo que el body */
+  color: #0b0f2b;
+  box-shadow: -4px 0 12px rgba(0, 255, 195, 0.15);
+  padding: 40px 30px;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden; /* ← en lugar de display: none */
+}
+/*overlay para mobiles */
+#menu a {
+  color: #6718f9;
+  /* texto blanco por defecto */
+  border: 1px solid rgb(124, 121, 121);
+  width: 100%;
+  box-shadow: 2px 2px 5px rgba(10, 20, 100, 0.5);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  padding: 10px;
 }
 
-/* 🚀 Menú desplegado */
+/*hover para alumbrado de la hamburguesa*/
+.hamburger:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#menu a:hover {
+  /* fondo suave al pasar el mouse */
+  color: #0074e4;
+  /* efecto llamativo en hover */
+  width: auto;
+}
+
+/* 🚀 Activar menú */
 .menu.active {
-  display: block;                   /* Se muestra */
-  opacity: 1;                       /* Totalmente visible */
-  transform: translateY(0);        /* Sin desplazamiento vertical */
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible; /* ← en lugar de display: block */
 }
 
-
-/* 🧾 Estructura de la lista */
+/* 🧾 Lista de navegación */
 .menu ul {
-  list-style: none;                /* Sin viñetas */
+  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;                       /* Espaciado entre elementos */
+  gap: 20px;
+
 }
 
-/* 📌 Cada ítem del menú */
+/* 📌 Ítems del menú */
 .menu li {
-  padding: 8px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;                /* Alineación de texto a la izquierda */
+  padding: 5px 4px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-align: left;
 }
 
-/* 🔗 Enlaces de navegación */
+/* 🔗 Enlaces */
 .menu a {
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
   color: #0b0f2b;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
   display: block;
 }
-
-/* ✨ Efecto al pasar el mouse o hacer clic */
-.menu li:hover,
-.menu li:active {
-  background-color: #e1fffb;
-  box-shadow: 
-    0 0 12px rgba(0, 255, 195, 0.4),
-    0 0 6px rgba(0, 0, 0, 0.1);
+.menu li:hover {
+  background-color: #e1f0ff;
+  transform: scale(1.02);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/*cursos pointer al modo escritorio*/
-  #hamburger,
-#closeMenu {
-  cursor: pointer;
+.menu li:hover a {
+  color: #0074e4;
 }
-/* ❎ Estilo universal de la “X” de cierre del menú */
+
+/* ✅ Enlace activo */
+.menu a.activo {
+  color: #001063;
+  font-weight: bold;
+  border-left: 4px solid #0b240f;
+  padding-left: 8px;
+}
+
+/* ❎ Botón de cierre */
 .close-menu {
-  font-size: 24px;
-  color: #0c0c0c;
-  padding: 10px;
-  cursor: pointer;
+  font-size: 28px;
+  color: #333333;
   text-align: right;
-  display: block;
-  width: 90%;           /* Asegura que el botón ocupe toda la fila */
+  cursor: pointer;
+  margin-bottom: 30px;
 }
 
-
-
-
-/* 📱 Teléfonos pequeños (≤480px) */
-@media (max-width: 480px) {
-  .menu {
-    right: 10px;
-    top: 60px;
-    width: 180px;
-    font-size: 0.9rem;
-  }
-}
-
-
-
-/* 📱 Móviles medianos y grandes (≤768px) */
+/* 📱 Responsive para móviles */
 @media (max-width: 768px) {
   .menu {
-    
     position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 40px 20px;
-    border-radius: 0;
-    box-shadow: none;
-    overflow-y: auto;
-    font-size: 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 10%; /* ← margen izquierdo del 10% */
+    width: 90%; /* ← ocupa el 90% restante */
+    background-color: #fdfdfd;
+    padding: 30px 20px;
+    box-shadow: -4px 0 12px rgba(0, 255, 195, 0.15);
+    transform: translateX(100%);
+    transition: transform 1.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden; /* ← en lugar de display: none */
+    z-index: 1000;
   }
-  
-  .menu li {
-    text-align: center;
-    padding: 12px;
+.menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  visibility: visible; /* ← en lugar de display: block */
+  }
+  .menu a {
     font-size: 1.2rem;
+    text-align: center;
+    
   }
-  .menu ul{
-    padding: 4rem;
-    gap: 10px; /* Aumenta el espacio entre los elementos */
+
+ .menu ul {
+    gap: 16px;
   }
 
   .close-menu {
-    display: block;              /* Visible solo en móviles */
+    text-align: center;
   }
 }
-
-/* ⚙️ Estado de inicio del menú */
-#menu {
-  display: none;
-  transition: all 0.3s ease;
-}
-
-/* 🚀 Mostrar menú cuando está activo */
-#menu.active {
-  display: block;
-}
-
