@@ -138,9 +138,9 @@ html, body {
 
 .btn-reiniciar:hover {
   transform: scale(1.02);
-  background-color: #0074e4;
-  color: #000000;
-  border: 2px solid black;
+  background-color: #b3d4f4;
+  color: #010a11;
+  border: 1px solid rgb(0, 34, 118);
 }
 
 
@@ -154,7 +154,7 @@ html, body {
   }
   /*boton reiniciar talbero*/
   .btn-reiniciar{
-    font-size: 1rem;
+    font-size: 1.2rem;
      width: 90%;
   }
 
@@ -197,4 +197,5 @@ html, body {
     padding: 5px;
     overflow-x: hidden;     /* previene borde blanco lateral */
   }
+  
 }
