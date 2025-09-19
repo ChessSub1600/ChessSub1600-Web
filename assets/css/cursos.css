@@ -1,6 +1,9 @@
 /*ESTILOS DEL BODY*/
 body {
   background: linear-gradient(to right, #0b0f2b, #0097c9);
+}
+.container-btn1, .tablero-btn1{
+    padding: 5%;
 
 }
 
@@ -44,7 +47,7 @@ section,
   box-shadow: 0 4px 12px rgba(0, 119, 204, 0.2);
   border-radius: 12px;
   padding: 30px;
-  margin: 40px auto;
+  margin: 40px 5%;
   background-color: #ffffff;
   max-width: 1000px;
 }
@@ -181,12 +184,12 @@ footer a:hover {
      margin: 25px 10%;
   }
   section,
-  .clases-sub1600
+  .clases-sub1600,
   .curso-card,
   .pdf-card,
   .section-descriptivaPDF {
     padding: 20px;
-    margin: 25px auto;
+    margin: 25px 5%;
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0,119,204,0.2);
