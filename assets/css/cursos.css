@@ -3,8 +3,9 @@ body {
   background: linear-gradient(to right, #0b0f2b, #0097c9);
 }
 .container-btn1, .tablero-btn1{/*probar elimandno aqui*/
-    padding: 5%;
-
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /*IMG cursos.css principal*/
@@ -181,7 +182,9 @@ footer a:hover {
 
   /* SECCIONES */
   .container-btn1{
-     margin: 25px 10%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
   }
   section,
   .clases-sub1600,
