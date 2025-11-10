@@ -78,7 +78,7 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 1.2rem;
-  color: #0b0f2b;
+  color: #f1f1f3;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   display: flex;
   align-items: center;
@@ -93,8 +93,8 @@
 
 /* ✨ Hover completo */
 .menu a:hover {
-  background-color: #e1f0ff;
-  color: #0074e4;
+  background-color: #fcfcfc;
+  color: #0c0c0c;
   transform: translateY(-2px);
 }
 

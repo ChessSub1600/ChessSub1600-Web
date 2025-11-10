@@ -7,12 +7,12 @@ html {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
-  background-color: #fdfdfd;
-  color: #1e1e1e;
+  background-color: #1A1A1A;
+  color: #F5F5F5;
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 .container-btn1{
-  margin: 6%;
+  margin: 2%;
 }
 
 /* ===============================
@@ -20,7 +20,7 @@ html {
 =============================== */
 h1 {
   font-size: 2.2rem;
-  color: #c0c0c0;
+  color: #F5F5F5;
   /* plateado */
   text-shadow: 0 0 8px #d3d3d3;
   /* sombra gris suave y brillante */
@@ -30,20 +30,20 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  color: #004aab;
+  color: #1E90FF;
   margin-bottom: 15px;
 }
 
 h3 {
   font-size: 1.6rem;
-  color: #3366cc;
+  color: #4682B4;
   margin-bottom: 10px;
 }
 
 p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #3b3b3b;
+  color: #E0E0E0;
   font-family: 'Arial', sans-serif;
 }
 
@@ -65,7 +65,7 @@ p {
   left: 0;
   margin-bottom: 1rem;
   /* menor separación */
-  background-color: #0b0f2b;
+  background-color: #0D1117;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +73,7 @@ p {
   /* menos altura lateral */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   /* más discreto */
-  border-bottom: 1px solid #00ffc3;
+  border-bottom: 1px solid #00329e;
   /* más fino */
   width: 100%;
   box-sizing: border-box;
@@ -103,15 +103,15 @@ p {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 3px solid #00ffc3;
-  box-shadow: 0 0 10px #0d6dfd;
+  border: 3px solid #0433c0;
+  box-shadow: 0 0 10px #0063f7;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #00ffc3, 0 0 5px #fff;
+  box-shadow: 0 0 15px #0544ff, 0 0 5px #fff;
 }
 
   
@@ -121,7 +121,7 @@ section {
   margin: 40px auto;
   padding: 30px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #22272E;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   text-align: center;
   border-left: 6px solid #0074e4;
@@ -131,7 +131,7 @@ section {
    HISTORIA
    */
    .historia {
-  background-color: #ffffff;
+  background-color: #22272E;
   padding: 30px;
   border-left: 6px solid #0074e4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
@@ -150,7 +150,7 @@ section {
 .texto-historia p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #3b3b3b;
+  color: #E0E0E0;
   text-align: justify;
 }
 
@@ -162,7 +162,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   padding: 60px 20px;
-  color: #191818;
+  color: #E0E0E0;
   position: relative;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -174,7 +174,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(40, 39, 39, 0.15);
   z-index: -1;
 }
 
@@ -182,7 +182,7 @@ section {
    CURSO
 =============================== */
 .curso {
-  background-color: #f0f5ff;
+  background-color: #22272E;
   box-shadow: 0 4px 12px rgba(0, 64, 255, 0.15);
   border-left: 6px solid #0074e4;
   padding: 40px;
@@ -205,9 +205,9 @@ section {
    FORMULARIO
 =============================== */
 .formulario {
-  background-color: #f8faff;
-  border-top: 3px solid #00ffc3;
-  box-shadow: 0 4px 14px rgba(0, 255, 195, 0.15);
+  background-color: #22272E;
+  border-top: 3px solid #0e25f3;
+  box-shadow: 0 4px 14px rgba(5, 1, 246, 0.499);
   border-radius: 8px;
 }
 
@@ -217,7 +217,7 @@ section {
 .botonformu,
 .registro-link {
   background-color: #102d73;
-  color: #f8f8ff;
+  color: #E0E0E0;
   padding: 12px 20px;
   border-radius: 6px;
   font-weight: 600;
@@ -226,9 +226,9 @@ section {
   display: inline-block;
   margin: 15px auto;
   transition: all 0.3s ease-in-out;
-  border: 1px solid green;
+  border: 1px solid rgb(36, 42, 235);
   border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 6px rgba(27, 31, 216, 0.6);
 }
 
 .botonformu:hover,
@@ -254,7 +254,7 @@ section {
 }
 
 #contact a[href*="wa.me"]:hover {
-  color: #1ebe5f;
+  color: #fefefe;
 }
 
 #contact img {
@@ -269,11 +269,11 @@ section {
    FOOTER
 =============================== */
 .footer-contacto {
-  background-color: #1c1c2e;
+  background-color: #22272E;
   color: #e1e1e1;
   text-align: center;
   padding: 30px 20px;
-  border-top: 4px solid #00ffc3;
+  border-top: 4px solid #031084;
   box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -313,10 +313,10 @@ section {
 
 /*section resenas*/
 .reseñas {
-  background-color: #f2f2f9;
+  background-color: #22272E;
   padding: 40px 20px;
   border-top: 4px solid #0074e4;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 8px rgba(232, 226, 255, 0.501);
   text-align: center;
 }
 
@@ -332,7 +332,7 @@ section {
 }
 
 .reseñas button {
-  background-color: #0074e4;
+  background-color: #0400e4;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -422,10 +422,10 @@ section {
   }
   /*HISTORIA DE AJEDREZ*/
  .historia {
-  background-color: #ffffff;
+  background-color: #22272E;
   padding: 30px;
   border-left: 6px solid #0074e4;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(203, 202, 202, 0.15);
   border-radius: 10px;
   text-align: center;
 }
@@ -441,7 +441,7 @@ section {
 .texto-historia p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #3b3b3b;
+  color: #E0E0E0;
   text-align: justify;
 }
 
