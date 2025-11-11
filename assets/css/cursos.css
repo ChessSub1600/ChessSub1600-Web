@@ -174,9 +174,9 @@ footer a:hover {
 /*Mediaquery para moviles*/
 @media (max-width: 600px) {
   h2 { font-size: 2rem; }
-  h3 { font-size: 1.8rem; }
+  h3 { font-size: 1.6rem; }
   p { font-size: 1.5rem; }
-  .button { font-size: 1rem; }
+  .button { font-size: 0.8rem; }
 }
 
 
@@ -212,17 +212,18 @@ footer a:hover {
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   h4 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   p,
   .curso-card li {
     font-size: 1.2rem;
     line-height: 1.6;
+    padding: 5px 15px;
   }
 
   /* VIDEOS EMBEBIDOS */
@@ -239,7 +240,7 @@ footer a:hover {
 
   /* BOTONES */
   .button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 16px 18px;
   }
 
