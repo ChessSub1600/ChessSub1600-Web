@@ -12,14 +12,14 @@ html, body {
 
 
 /* 📦 Contenedor principal del tablero */
+/* Estilos base para escritorio */
 .tablero-container {
   position: relative;
   display: block;
-  width: 100%;
-  max-width: 700px;     /* espacio cómodo en escritorio */
+  width: fit-content;
   margin: 20px auto;
-  padding: 10px;
-  overflow: hidden;     /* evita scroll interno si hay desbordes */
+  padding: 20px;
+  overflow: hidden;
 }
 
 
@@ -143,59 +143,41 @@ html, body {
   border: 1px solid rgb(0, 34, 118);
 }
 
+/*
 
+*/
 /* 🖥️ Adaptaciones para pantallas grandes (modo escritorio) */
-@media (min-width: 501px) {
+
+/* 📱 Adaptaciones para pantallas pequeñas (modo móvil) */
+@media (max-width: 700px) {
+  #chessboard {
+    grid-template-columns: repeat(8, 30px);
+    grid-template-rows: repeat(8, 30px);
+    width: fit-content ;
+  }
+
+  /*Utilizo regla de prioridad css !important*/
+  .numeros-izquierda {
+    top: 45px;
+    left: 10px; /*Ajustar aqui el margen de los numeros version movil*/
+    font-size: 0.75rem;
+    height: 240px;
+    grid-template-rows: repeat(8, 30px) !important;
+  }
+
+  .letras-abajo {
+    grid-template-columns: repeat(8, 30px);
+    font-size: 0.9rem;
+  }
+
   .tablero-container {
+    overflow-x: hidden;
     max-width: none;         /* quita límite fijo */
     width: fit-content;      /* se ajusta al tamaño del tablero */
     margin: 30px auto;
     padding: 20px;
-  }
-  /*boton reiniciar talbero*/
-  .btn-reiniciar{
-    font-size: 1.2rem;
-     width: 90%;
+  
   }
 
-  #chessboard {
-    width: fit-content;
-    margin: 0 auto;
-  }
-
-  .letras-abajo {
-    width: fit-content;
-    margin: 12px auto 0;
-  }
-
-  .numeros-izquierda {
-    left: -30px;             /* corrige posición para mejor alineación */
-    height: 480px;
-  }
-}
-
-
-/* 📱 Adaptaciones para pantallas pequeñas (modo móvil) */
-@media (max-width: 500px) {
-  #chessboard {
-    grid-template-columns: repeat(8, 40px);
-    grid-template-rows: repeat(8, 40px);
-    width: fit-content;
-  }
-
-  .numeros-izquierda {
-    font-size: 0.75rem;
-    height: 320px;
-  }
-
-  .letras-abajo {
-    grid-template-columns: repeat(8, 40px);
-    font-size: 1rem;
-  }
-
-  .tablero-container {
-    padding: 5px;
-    overflow-x: hidden;     /* previene borde blanco lateral */
-  }
   
 }

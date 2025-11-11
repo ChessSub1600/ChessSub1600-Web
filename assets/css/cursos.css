@@ -199,7 +199,7 @@ footer a:hover {
   .pdf-card,
   .section-descriptivaPDF {
     padding: 20px;
-    margin: 25px 5%;
+    margin: 15px 5px;
     max-width: 100%;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0,119,204,0.2);
