@@ -148,6 +148,33 @@ section {
   border-left: 6px solid #0074e4;
 }
 
+/*Filosofia CARD*/
+.nuestra-mision ul {
+  list-style-position: inside; /* mueve el punto dentro del bloque de texto */
+  padding-left: 0;             /* elimina sangría extra */
+  margin-top: 0;
+  padding: 10px;
+}
+
+.nuestra-mision li {
+  margin-bottom: 6px;          /* reduce espacio entre ítems */
+  line-height: 1.5;
+}
+.nuestra-mision li::marker {
+  content: "♟️ ";
+  font-size: 1rem;
+}
+/*Compensa el grosor del header para que se vean las cartas*/
+#quienes,
+#mision,
+#filosofia,
+#compromiso {
+  scroll-margin-top: 200px;
+}
+
+
+
+
 /* ===============================
    HISTORIA
    */
