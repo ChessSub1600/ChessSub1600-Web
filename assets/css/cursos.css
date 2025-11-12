@@ -212,7 +212,7 @@ footer a:hover {
   }
 
   h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   h4 {
@@ -221,7 +221,7 @@ footer a:hover {
 
   p,
   .curso-card li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.6;
     padding: 5px 15px;
   }

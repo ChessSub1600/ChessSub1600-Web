@@ -95,6 +95,7 @@ p {
   /* efecto de desenfoque elegante */
 }
 .title-logo {
+  position: relative; /* Necesario para posicionar el texto */
   display: flex;
   align-items: center;
   gap: 12px;
@@ -109,9 +110,29 @@ p {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #0544ff, 0 0 5px #fff;
+.texto-hover {
+  position: absolute;
+  bottom: -10px; /* debajo del logo/título */
+  left: 65%;
+  transform: translateX(-70%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #081dff;
+  box-shadow: 3px 3px 10px 1px #1365d7;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid blue;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+
+  opacity: 0; /* oculto inicialmente */
+  transition: all 0.4s ease;
+  pointer-events: none; /* no bloquea el cursor */
+}
+
+.title-logo:hover .texto-hover {
+  opacity: 1; /* aparece */
+  transform: translateX(-50%) translateY(0); /* sube suavemente */
 }
 
   
@@ -285,7 +306,8 @@ section {
 
 .footer-enlaces a {
   color: #4ac4ff;
-  margin: 0 8px;
+  text-align: center;
+  margin: 0 4px;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -400,11 +422,11 @@ section {
     font-size: 1rem;
   }
   .img-curso {
-    width: 160px;
+    width: 140px;
   }
   .botonformu,
   .registro-link {
-    width: 100%;
+    width: 90%;
     text-align: center;
     font-size: 1rem;
     padding: 10px;
