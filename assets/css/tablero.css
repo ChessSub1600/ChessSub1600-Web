@@ -59,10 +59,11 @@ html, body {
   font-size: 2rem;
   user-select: none;
   transition: transform 0.1s ease;
+  
 }
 
 .casilla.blanca {
-  background-color: #eeeae5;
+  background-color: #DDE6F2;
 }
 
 .casilla.negra {

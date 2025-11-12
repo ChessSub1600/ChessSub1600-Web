@@ -23,7 +23,11 @@ body {
   color: #ffffff;
   transform: scale(1.05);
 }
-
+/*Estilo del precio*/
+.precio {
+  color: rgb(100, 109, 1);
+  font-weight: bold;
+}
 
 
 
