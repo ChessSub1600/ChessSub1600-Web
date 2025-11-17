@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnRegistro = document.querySelector('.botonformu');
 
   // URL de tu Web App desplegado
+  //const scriptURL = 'http://localhost:3000/formulario';
+
   const scriptURL = 'https://script.google.com/macros/s/AKfycbytmGMM97sa1x9zsx2N-Np4TVTUeLrKVaSem24tTjZf3ZOdCNv5VtTsFmDN4M1xm9I/exec';
 
   formulario.addEventListener('submit', async (e) => {
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Esperamos JSON de vuelta
       const data = await response.json();
+      console.log('📨 Respuesta del backend:', data);
 
       if (data.status === 'OK') {
         mostrarMensaje('¡Registro exitoso! Bienvenido a ChessSub1600 🎉');
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loader.style.display = 'none';
       btnRegistro.disabled = false;
       mostrarMensaje('Error al enviar el formulario. Intenta más tarde.', true);
-      console.error('Fetch error:', err);
+      console.error('❌ Error en fetch:', err);
     }
   });
 
