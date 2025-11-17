@@ -48,11 +48,16 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbySH1HBpoz73QFj9aBAPv
     btnRegistro.disabled = true;
 
     try {
-      const response = await fetch(scriptURL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      const formData = new URLSearchParams();
+for (const key in payload) {
+  formData.append(key, payload[key]);
+}
+
+const response = await fetch(scriptURL, {
+  method: 'POST',
+  body: formData
+});
+
 
       loader.style.display = 'none';
       btnRegistro.disabled = false;
@@ -69,7 +74,6 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbySH1HBpoz73QFj9aBAPv
       }
 
     } catch (err) {
-      loader.style.display = 'none';
       btnRegistro.disabled = false;
       mostrarMensaje('Error al enviar el formulario. Intenta más tarde.', true);
       console.error('❌ Error en fetch:', err);
