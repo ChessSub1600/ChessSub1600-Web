@@ -1,4 +1,4 @@
-const { google } = require('googleapis');
+/*const { google } = require('googleapis');
 const path = require('path');
 
 console.log('Ruta calculada del JSON:', path.join(__dirname, '../../chesssub1600mailer.json'));
@@ -61,4 +61,4 @@ async function guardarReseñaEnSheets(datos) {
 module.exports = {
   guardarRegistroEnSheets,
   guardarReseñaEnSheets
-};
+};*/

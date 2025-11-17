@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader      = document.getElementById('loader');
   const btnRegistro = document.querySelector('.botonformu');
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbySH1HBpoz73QFj9aBAPv_53tNYrmFEzc0oqKPU_-IcRlCK9UlU3AtWUzzI4MhNsLt4/exec';
+const scriptURL = "https://script.google.com/macros/s/AKfycbySH1HBpoz73QFj9aBAPv_53tNYrmFEzc0oqKPU_-IcRlCK9UlU3AtWUzzI4MhNsLt4/exec";
 
   formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const payload = {
+      tipo: "registro", // ← este campo es clave
       nombre: document.getElementById('nombre').value.trim(),
       apellidos: document.getElementById('apellidos').value.trim(),
       email: document.getElementById('email').value.trim(),
