@@ -1,42 +1,64 @@
 const { google } = require('googleapis');
 const path = require('path');
 
-// ✅ Mostrar la ruta calculada del JSON para verificar
 console.log('Ruta calculada del JSON:', path.join(__dirname, '../../chesssub1600mailer.json'));
 
-// Autenticación con Google Sheets usando tu clave .json
 const auth = new google.auth.GoogleAuth({
-    keyFile: path.join(__dirname, '../../chesssub1600mailer.json'), // Correcta: sube 2 niveles desde assets/js
-    scopes: ['https://www.googleapis.com/auth/spreadsheets']
+  keyFile: path.join(__dirname, '../../chesssub1600mailer.json'),
+  scopes: ['https://www.googleapis.com/auth/spreadsheets']
 });
 
-// 📄 Función para guardar un registro en la hoja
+const SPREADSHEET_ID = '1VjKsWc67xGpDPG6_XZzkSYmqteeBGcU2UwAHsPPJU6c';
+
+// 📄 Guardar registro en hoja "Usuarios"
 async function guardarRegistroEnSheets(datos) {
-    const client = await auth.getClient();
-    const sheets = google.sheets({ version: 'v4', auth: client });
+  const client = await auth.getClient();
+  const sheets = google.sheets({ version: 'v4', auth: client });
 
-    /*Campos que recibeel backend del formulario bbdd */
-    const valores = [
-        [
-            datos.nombre,
-            datos.apellido,
-            datos.email,
-            datos.telefono ? `'${String(datos.telefono).trim()}'` : '',
-            datos.interes,
-            datos.password,
-            datos.confirmarPassword,
-            new Date().toLocaleString('es-ES')
-        ]
-    ];
+  const valores = [
+    [
+      datos.nombre,
+      datos.apellidos,
+      datos.email,
+      datos.password,
+      datos.confirmarPassword,
+      datos.telefono ? `'${String(datos.telefono).trim()}'` : '',
+      datos.interes,
+      datos.acepta,
+      datos.fecha || new Date().toLocaleString('es-ES')
+    ]
+  ];
 
-
-    await sheets.spreadsheets.values.append({
-        spreadsheetId: '14duvYmnsoARzgk-OdzRd_4IUQp2UX5JKL51tbVqHFjQ',
-        //mismo spreadsheets AKfycbyC6WDuWRWp6_zJnqUUBzoIJKLxl1oqzcxEMuYZKlFW6vdcaxZoyh_ymw1KjdVWNjw
-        range: 'Hoja1',
-        valueInputOption: 'USER_ENTERED',
-        resource: { values: valores }
-    });
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: SPREADSHEET_ID,
+    range: 'Usuarios',
+    valueInputOption: 'USER_ENTERED',
+    resource: { values: valores }
+  });
 }
 
-module.exports = { guardarRegistroEnSheets };
+// 📝 Guardar reseña en hoja "reseñaUsuarios"
+async function guardarReseñaEnSheets(datos) {
+  const client = await auth.getClient();
+  const sheets = google.sheets({ version: 'v4', auth: client });
+
+  const valores = [
+    [
+      datos.nombre,
+      datos.respuesta,
+      datos.fecha || new Date().toLocaleString('es-ES')
+    ]
+  ];
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: SPREADSHEET_ID,
+    range: 'reseñaUsuarios',
+    valueInputOption: 'USER_ENTERED',
+    resource: { values: valores }
+  });
+}
+
+module.exports = {
+  guardarRegistroEnSheets,
+  guardarReseñaEnSheets
+};

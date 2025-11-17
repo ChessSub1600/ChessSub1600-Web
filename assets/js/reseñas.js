@@ -1,55 +1,58 @@
-// ✅ URL de tu Web App (sin proxy para POST)
-const targetURL = "https://script.google.com/macros/s/AKfycbzZqRpkKRncEMMMS4JpSVNPWp6YxKnp4fUdNtwDlWZKVpW-qeiFaG9W8jQZylU8BhQ/exec";
+// ✅ URL local para pruebas
+const scriptURL = "https://script.google.com/macros/s/AKfycbxYoDxxEkz9Jz2oPh4-W5c8KhpP3RleFu751v76TNiuEiDHkrgHb6eXaSHV7WaeuN0/exec";
 
-// ✅ Proxy sólo para GET (mientras pruebas CORS)
-const proxy     = "https://api.allorigins.win/raw?url=";
-const scriptURL = proxy + encodeURIComponent(targetURL);
-
-// Lanza la petición GET para obtener reseñas
+// 🧩 Lanza la petición GET para obtener reseñas (si tienes esa ruta en el backend)
 function obtenerReseñas() {
   fetch(scriptURL)
     .then(res => res.json())
     .then(data => {
-      if (data.status === "OK") {
-        renderReseñas(data.reseñas);
+      if (data.status === "OK" && Array.isArray(data.reseñas)) {
+        renderReseñas(data.reseñas); // ← asegúrate de tener esta función en tu HTML
       } else {
         console.error("Error al obtener reseñas:", data);
       }
     })
-    .catch(err => console.error("Fetch fallido:", err));
+    .catch(err => console.error("❌ Error en fetch GET:", err));
 }
 
-// Envia la reseña usando text/plain para evitar preflight
-function enviarResena(nombre, mensaje) {
-  console.log("Enviando reseña:", nombre, mensaje);
-  fetch(targetURL, {
+// 📝 Envía la reseña como JSON
+function enviarResena(nombre, respuesta) {
+  console.log("📤 Enviando reseña:", nombre, respuesta);
+  fetch(scriptURL, {
     method: "POST",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body:    JSON.stringify({ nombre, mensaje })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      tipo: "reseña",
+      nombre,
+      respuesta,
+      fecha: new Date().toLocaleString()
+    })
   })
     .then(res => res.json())
     .then(data => {
       if (data.status === "OK") {
-        console.log("Reseña enviada correctamente");
+        console.log("✅ Reseña enviada correctamente");
         obtenerReseñas(); // refresca
       } else {
         console.error("Error al enviar reseña:", data);
       }
     })
-    .catch(err => console.error("POST fallido:", err));
+    .catch(err => console.error("❌ Error en fetch POST:", err));
 }
 
-// Captura el submit del formulario
+// 🧩 Captura el submit del formulario
 document.addEventListener("DOMContentLoaded", () => {
   obtenerReseñas();
 
   const form = document.getElementById("form-reseña");
+  if (!form) return;
+
   form.addEventListener("submit", e => {
     e.preventDefault();
-    const nombre  = form.nombre.value.trim();
-    const mensaje = form.mensaje.value.trim();
-    if (nombre && mensaje) {
-      enviarResena(nombre, mensaje);
+    const nombre    = form.nombre.value.trim();
+    const respuesta = form.mensaje.value.trim();
+    if (nombre && respuesta) {
+      enviarResena(nombre, respuesta);
       form.reset();
     }
   });

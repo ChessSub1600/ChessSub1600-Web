@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const cookiesConsent = localStorage.getItem("cookies");
-  const opcionesValidas = ["aceptadas", "esenciales", "rechazadas"];
   const banner = document.getElementById("aviso-cookies");
+  const opcionesValidas = ["aceptadas", "esenciales", "rechazadas"];
+  const estado = localStorage.getItem("cookies");
 
   if (!banner) return;
 
-  // Limpiar si el valor es inválido
-  if (!opcionesValidas.includes(cookiesConsent)) {
+  if (!opcionesValidas.includes(estado)) {
     localStorage.removeItem("cookies");
     banner.style.display = "block";
     return;
@@ -14,21 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   banner.style.display = "none";
 
-  // Mostrar estado y ejecutar lógica de cookies
   const avisoEstado = document.createElement("p");
-  avisoEstado.textContent = `Has aceptado: ${cookiesConsent}.`;
-  avisoEstado.style.fontSize = "14px";
-  avisoEstado.style.textAlign = "center";
-  avisoEstado.style.marginTop = "10px";
+  avisoEstado.textContent = `Has aceptado: ${estado}.`;
+  avisoEstado.style.cssText = "font-size:14px;text-align:center;margin-top:10px;";
   document.body.appendChild(avisoEstado);
 
-  if (cookiesConsent === "aceptadas") {
-    // scripts de terceros
-  } else if (cookiesConsent === "esenciales") {
-    // cookies técnicas
-  } else if (cookiesConsent === "rechazadas") {
-    // no cargar cookies externas
-  }
+  // Aquí puedes cargar scripts según el estado
 });
 
 function guardarConsentimiento(valor) {
