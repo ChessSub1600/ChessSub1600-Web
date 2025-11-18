@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader      = document.getElementById('loader');
   const btnRegistro = document.querySelector('.botonformu');
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbytmGMM97sa1x9zsx2N-Np4TVTUeLrKVaSem24tTjZf3ZOdCNv5VtTsFmDN4M1xm9I/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyXT4twqB9rCAIJK9YlnyeY_UyldjtD8wIFDVYvppiHmVykoh1eAXExc79FquUnfkaI/exec";
 
   formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       confirmarPassword: pwd2,
       telefono: document.getElementById('telefono').value.trim(),
       interes: document.getElementById('interes').value,
-      acepta: ok ? "Sí" : "No",
+      acepto: ok ? "Sí" : "No",
       fecha: new Date().toLocaleString()
     };
 

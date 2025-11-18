@@ -1,5 +1,5 @@
 // ✅ URL produccion 
-const scriptURL = "https://script.google.com/macros/s/AKfycbytmGMM97sa1x9zsx2N-Np4TVTUeLrKVaSem24tTjZf3ZOdCNv5VtTsFmDN4M1xm9I/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyXT4twqB9rCAIJK9YlnyeY_UyldjtD8wIFDVYvppiHmVykoh1eAXExc79FquUnfkaI/exec";
 
 // 🧩 Lanza la petición GET para obtener reseñas (si tienes esa ruta en el backend)
 function obtenerReseñas() {
@@ -15,18 +15,16 @@ function obtenerReseñas() {
     .catch(err => console.error("❌ Error en fetch GET:", err));
 }
 
-// 📝 Envía la reseña como JSON
+// 📝 Envía la reseña con URLSearchParams
 function enviarResena(nombre, respuesta) {
-  console.log("📤 Enviando reseña:", nombre, respuesta);
+  const formData = new URLSearchParams();
+  formData.append("tipo", "reseña");
+  formData.append("nombre", nombre);
+  formData.append("respuesta", respuesta);
+
   fetch(scriptURL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      tipo: "reseña",
-      nombre,
-      respuesta,
-      fecha: new Date().toLocaleString()
-    })
+    body: formData
   })
     .then(res => res.json())
     .then(data => {
@@ -39,6 +37,7 @@ function enviarResena(nombre, respuesta) {
     })
     .catch(err => console.error("❌ Error en fetch POST:", err));
 }
+
 
 // 🧩 Captura el submit del formulario
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,4 +55,22 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     }
   });
+
+  //Funcion resenas
+  function renderReseñas(reseñas) {
+  const lista = document.getElementById("lista-reseñas");
+  lista.innerHTML = ""; // limpia antes de renderizar
+
+  reseñas.forEach(reseña => {
+    const div = document.createElement("div");
+    div.className = "reseña-item";
+    div.innerHTML = `
+      <p><strong>${reseña.nombre}</strong> dice:</p>
+      <p>${reseña.respuesta}</p>
+      <hr>
+    `;
+    lista.appendChild(div);
+  });
+}
+
 });
