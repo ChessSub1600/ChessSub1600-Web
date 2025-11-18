@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader      = document.getElementById('loader');
   const btnRegistro = document.querySelector('.botonformu');
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbzm5YSa555xYOGHOIIQk9jv5HiuiXdqYLkmdJGY524XiULcbCstGmwyqkWqgqQBnMpf/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzXA8QrwmPpflXfIsoThY692v_mO6eweNRb-TQhYGne5VnktTaw5j3P32-OxWhWCpKQ/exec";
 
   formulario.addEventListener('submit', async (e) => {
     e.preventDefault();

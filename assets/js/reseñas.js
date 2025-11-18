@@ -1,4 +1,4 @@
-// ✅ URL produccion 
+/*/ ✅ URL produccion 
 const scriptURL = "https://script.google.com/macros/s/AKfycbzm5YSa555xYOGHOIIQk9jv5HiuiXdqYLkmdJGY524XiULcbCstGmwyqkWqgqQBnMpf/exec";
 
 // 🧩 Lanza la petición GET para obtener reseñas (si tienes esa ruta en el backend)
@@ -73,4 +73,67 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 }
 
+});*/
+
+/*Codigo ajustado para mostrar las resenas en index.html(pagina principal) */
+const scriptURL = "https://script.google.com/macros/s/AKfycbzXA8QrwmPpflXfIsoThY692v_mO6eweNRb-TQhYGne5VnktTaw5j3P32-OxWhWCpKQ/exec";
+
+document.addEventListener("DOMContentLoaded", () => {
+  obtenerReseñas();
+
+  const formReseña = document.getElementById("form-reseña");
+  formReseña.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nombre = formReseña.nombre.value.trim();
+    const mensaje = formReseña.mensaje.value.trim();
+
+    if (!nombre || !mensaje) return;
+
+    const formData = new URLSearchParams();
+    formData.append("tipo", "reseña");
+    formData.append("nombre", nombre);
+    formData.append("respuesta", mensaje);
+
+    try {
+      const res = await fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      });
+      const data = await res.json();
+
+      if (data.status === "OK") {
+        formReseña.reset();
+        obtenerReseñas(); // recarga reseñas
+      } else {
+        console.error("Error al enviar reseña:", data.message);
+      }
+    } catch (err) {
+      console.error("❌ Error en fetch:", err);
+    }
+  });
 });
+
+async function obtenerReseñas() {
+  try {
+    const res = await fetch(scriptURL);
+    const data = await res.json();
+
+    if (data.status === "OK") {
+      const contenedor = document.getElementById("lista-reseñas");
+      contenedor.innerHTML = "";
+
+      data.reseñas.forEach(({ nombre, respuesta, fecha }) => {
+        const reseñaHTML = `
+          <div class="tarjeta-reseña">
+            <p><strong>${nombre}</strong> <span class="fecha-reseña">(${fecha})</span></p>
+            <p>${respuesta}</p>
+          </div>
+        `;
+        contenedor.innerHTML += reseñaHTML;
+      });
+    }
+  } catch (err) {
+    console.error("❌ Error al obtener reseñas:", err);
+  }
+}
