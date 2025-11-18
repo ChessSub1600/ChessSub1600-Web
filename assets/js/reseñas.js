@@ -1,5 +1,5 @@
 // ✅ URL produccion 
-const scriptURL = "https://script.google.com/macros/s/AKfycbyXT4twqB9rCAIJK9YlnyeY_UyldjtD8wIFDVYvppiHmVykoh1eAXExc79FquUnfkaI/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzm5YSa555xYOGHOIIQk9jv5HiuiXdqYLkmdJGY524XiULcbCstGmwyqkWqgqQBnMpf/exec";
 
 // 🧩 Lanza la petición GET para obtener reseñas (si tienes esa ruta en el backend)
 function obtenerReseñas() {
